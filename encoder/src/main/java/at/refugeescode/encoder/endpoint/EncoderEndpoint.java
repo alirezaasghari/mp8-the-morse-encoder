@@ -30,6 +30,4 @@ public class EncoderEndpoint {
                 .map(letter -> restTemplate.postForObject(morseUrl, letter, String.class))
                 .collect(Collectors.joining(" "));
     }
-
-
 }
