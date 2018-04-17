@@ -28,12 +28,12 @@ public class MorseEndpoint {
                 && !Character.isDigit(letter.charAt(0))) {
             return " ";
         }
-        return convertToMorseCode(letter);
+        return convertToMorseCode(letter.toLowerCase());
     }
 
     private String convertToMorseCode(String letter) {
         List<String> letters = alphabetLetters.getLetters();
         List<String> morseCode = morseCodes.getMorseCodes();
-        return morseCode.get(letters.indexOf(letter.toLowerCase()));
+        return morseCode.get(letters.indexOf(letter));
     }
 }
