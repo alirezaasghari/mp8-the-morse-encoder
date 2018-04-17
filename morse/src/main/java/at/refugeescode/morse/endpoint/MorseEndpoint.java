@@ -24,7 +24,8 @@ public class MorseEndpoint {
 
     @PostMapping("/morse")
     String encode(@RequestBody String letter) {
-        if (letter.trim().isEmpty()) {
+        if (!Character.isAlphabetic(letter.charAt(0))
+                && !Character.isDigit(letter.charAt(0))) {
             return " ";
         }
         return convertToMorseCode(letter);
@@ -33,6 +34,6 @@ public class MorseEndpoint {
     private String convertToMorseCode(@RequestBody String letter) {
         List<String> letters = alphabetLetters.getLetters();
         List<String> morseCode = morseCodes.getMorseCodes();
-        return morseCode.get(letters.indexOf(letter));
+        return morseCode.get(letters.indexOf(letter.toLowerCase()));
     }
 }

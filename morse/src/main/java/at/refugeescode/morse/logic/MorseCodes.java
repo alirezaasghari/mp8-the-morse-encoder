@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class MorseCodes {
 
-    @Value("#{'${morse.codes}'.split(' ')}")
+    @Value("#{'${morse.codes}'.split(' / ')}")
     private List<String> morseCodes;
 
     public List<String> getMorseCodes() {
