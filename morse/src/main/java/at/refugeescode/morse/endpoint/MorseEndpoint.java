@@ -31,7 +31,7 @@ public class MorseEndpoint {
         return convertToMorseCode(letter);
     }
 
-    private String convertToMorseCode(@RequestBody String letter) {
+    private String convertToMorseCode(String letter) {
         List<String> letters = alphabetLetters.getLetters();
         List<String> morseCode = morseCodes.getMorseCodes();
         return morseCode.get(letters.indexOf(letter.toLowerCase()));
